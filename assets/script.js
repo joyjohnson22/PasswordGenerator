@@ -1,10 +1,10 @@
 console.log("javascript file loaded")
 var genButton = document.getElementById("generatebutton")
-var passchar = []
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var lowercase = "abcdefghijklmnopqrstuvwxyz"
 var number = "0123456789"
 var specialcharacter = "!@#$%^&*()_+~"
+
 genButton.addEventListener("click", function () {
     var passwordLength = parseInt(prompt("Enter Password Length"));
     console.log("PL", passwordLength)
@@ -12,6 +12,7 @@ genButton.addEventListener("click", function () {
         alert("Password length must be between 8-126 characters. Please click generate password to begin")
     }
     else {
+        var passchar = []
         var needUpperCase = confirm("Do you like to have uppercase")
         var needLowerCase = confirm("Do you like to have lowercase")
         var needNumber = confirm("Do you like to have numbers")
@@ -33,6 +34,13 @@ genButton.addEventListener("click", function () {
         }
         else {
             console.log(passchar)
+            var password = ""
+            for (let i = 1; i <= passwordLength; i++) {
+                let index = Math.floor(Math.random() * passchar.length)
+                password += passchar[index]
+                console.log(password)
+            }
+            console.log(password)
         }
     }
 })
