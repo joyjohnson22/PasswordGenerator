@@ -41,6 +41,8 @@ genButton.addEventListener("click", function () {
                 console.log(password)
             }
             console.log(password)
+            var textarea = document.getElementById("mypassword")
+            textarea.innerText = password
         }
     }
 })
